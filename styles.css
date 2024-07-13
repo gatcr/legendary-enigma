@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f0f2f5;
+    background-color: #87CEEB;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,62 +8,127 @@ body {
     margin: 0;
 }
 
-.upload-container {
-    background: white;
-    padding: 20px 40px;
+#game-container {
+    background-color: #ffffff;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
 }
 
-.upload-container h2 {
+#story {
     margin-bottom: 20px;
-    color: #333;
 }
 
-.custom-file-upload {
-    display: inline-block;
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: #007bff;
+.choice-button {
+    display: block;
+    background-color: #008cba;
     color: white;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.custom-file-upload:hover {
-    background-color: #0056b3;
-}
-
-input[type="file"] {
-    display: none;
-}
-
-#preview-container {
-    display: none;
-    margin-top: 10px;
+    padding: 10px;
+    margin: 10px 0;
     text-align: center;
-}
-
-#file-preview {
-    max-width: 100%;
-    max-height: 300px;
-    border: 1px solid #ddd;
     border-radius: 5px;
-    margin-top: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #218838;
+.choice-button:hover {
+    background-color: #005f5f;
+}
+
+#characters {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.character {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.hero {
+    background-color: #6B8E23; /* DarkOliveGreen */
+}
+
+.villain {
+    background-color: #8B4513; /* SaddleBrown */
+}
+
+.treasure {
+    background-color: #FFD700; /* Gold */
+}
+
+.house {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: #CD853F; /* Peru */
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.door {
+    width: 40px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #A0522D; /* Sienna */
+}
+
+.door-left {
+    left: 5%;
+}
+
+.door-right {
+    right: 5%;
+}
+
+.key {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffd700; /* Gold */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#forest {
+    width: 100%;
+    height: 100%;
+    background-color: #228B22; /* ForestGreen */
+}
+
+.tree {
+    width: 40px;
+    height: 80px;
+    background-color: #8B4513; /* SaddleBrown */
+    border-radius: 10px;
+    position: absolute;
+}
+
+.tree-left {
+    left: 10%;
+}
+
+.tree-right {
+    right: 10%;
+}
+
+#object {
+    width: 50px;
+    height: 50px;
+    background-color: #FF1493; /* DeepPink */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 1;
 }
