@@ -149,4 +149,55 @@ function updateScene(nodeIndex) {
         const doorLeft = document.createElement('div');
         doorLeft.classList.add('door', 'door-left');
         house.appendChild(doorLeft);
-        const doorRight = document.createElement('
+        const doorRight = document.createElement('div');
+        doorRight.classList.add('door', 'door-right');
+        house.appendChild(doorRight);
+        scene.appendChild(house);
+    } else if (nodeIndex === 4 && !state.hasKey) {
+        const key = document.createElement('div');
+        key.classList.add('key');
+        scene.appendChild(key);
+    } else if (nodeIndex === 7) {
+        createCharacter('villain', 'Wolf', 'villain');
+    } else if (nodeIndex === 9 && !state.hasTreasure) {
+        createCharacter('treasure', 'Treasure', 'treasure');
+    } else if (nodeIndex === 12 && !state.hasObject) {
+        createObject();
+    }
+}
+
+function createCharacter(id, name, type) {
+    const character = document.createElement('div');
+    character.classList.add('character', type);
+    character.title = name;
+    charactersContainer.appendChild(character);
+}
+
+function createObject() {
+    const object = document.createElement('div');
+    object.id = 'object';
+    object.title = 'Strange Object';
+    object.onclick = () => pickObject();
+    document.getElementById('game-container').appendChild(object);
+}
+
+function pickObject() {
+    state.hasObject = true;
+    showStoryNode(13);
+}
+
+function makeChoice(currentNode, nextNode) {
+    if (currentNode === 4 && nextNode === 6) {
+        state.hasKey = true;
+    } else if (currentNode === 10 && nextNode === 11) {
+        state.hasTreasure = true;
+    } else if (currentNode === 12 && nextNode === 13) {
+        state.hasObject = true;
+    } else if (currentNode === 14 && nextNode === 15 && state.hasObject) {
+        showStoryNode(nextNode);
+        return;
+    }
+    showStoryNode(nextNode);
+}
+
+startGame();
